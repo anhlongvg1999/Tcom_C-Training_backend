@@ -69,7 +69,7 @@ namespace CME.Apis.Controllers
         [ProducesResponseType(typeof(UserViewModel), StatusCodes.Status200OK)]
         public async Task<IActionResult> Create([FromForm] UserRequestModel requestModel)
         {
-            return await ExecuteFunction(async () =>
+            return await ExecuteFunction(async (user) =>
             {
                 var model = AutoMapperUtils.AutoMap<UserRequestModel, User>(requestModel);
 
